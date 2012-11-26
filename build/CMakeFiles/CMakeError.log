@@ -1,0 +1,116 @@
+Determining if the system is big endian passed with the following output:
+Change Dir: /home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec217970632/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec217970632.dir/build.make CMakeFiles/cmTryCompileExec217970632.dir/build
+make[1]: Entering directory `/home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec217970632.dir/TestEndianess.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec217970632.dir/TestEndianess.c.o   -c /home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp/TestEndianess.c
+Linking C executable cmTryCompileExec217970632
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec217970632.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec217970632.dir/TestEndianess.c.o  -o cmTryCompileExec217970632 -rdynamic 
+make[1]: Leaving directory `/home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp'
+
+TestEndianess.c:
+/* A 16 bit integer is required. */
+typedef unsigned short cmakeint16;
+
+/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
+   On a big endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
+
+/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
+   On a little endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_little[argc];
+  require += info_big[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2398858008/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2398858008.dir/build.make CMakeFiles/cmTryCompileExec2398858008.dir/build
+make[1]: Entering directory `/home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2398858008.dir/CheckSymbolExists.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTryCompileExec2398858008.dir/CheckSymbolExists.c.o   -c /home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec2398858008
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2398858008.dir/link.txt --verbose=1
+/usr/bin/gcc         CMakeFiles/cmTryCompileExec2398858008.dir/CheckSymbolExists.c.o  -o cmTryCompileExec2398858008 -rdynamic 
+CMakeFiles/cmTryCompileExec2398858008.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: Leaving directory `/home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec2398858008] Error 1
+make: *** [cmTryCompileExec2398858008/fast] Error 2
+
+File /home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3020669432/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3020669432.dir/build.make CMakeFiles/cmTryCompileExec3020669432.dir/build
+make[1]: Entering directory `/home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3020669432.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3020669432.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3020669432
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3020669432.dir/link.txt --verbose=1
+/usr/bin/gcc     -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec3020669432.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3020669432 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec3020669432] Error 1
+make[1]: Leaving directory `/home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3020669432/fast] Error 2
+
+
+Performing C++ SOURCE FILE Test HAVE_ICONV_CONST failed with the following output:
+Change Dir: /home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3084615470/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3084615470.dir/build.make CMakeFiles/cmTryCompileExec3084615470.dir/build
+make[1]: Entering directory `/home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3084615470.dir/src.cxx.o
+/usr/bin/c++    -DHAVE_ICONV_CONST   -o CMakeFiles/cmTryCompileExec3084615470.dir/src.cxx.o -c /home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp/src.cxx
+/home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp/src.cxx:4:98: error: new declaration ‘double iconv(iconv_t, char**, size_t*, char**, size_t*)’
+In file included from /home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp/src.cxx:2:0:
+/usr/include/iconv.h:43:15: error: ambiguates old declaration ‘size_t iconv(iconv_t, char**, size_t*, char**, size_t*)’
+make[1]: Leaving directory `/home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec3084615470.dir/src.cxx.o] Error 1
+make: *** [cmTryCompileExec3084615470/fast] Error 2
+
+Source file was:
+
+	#include <iconv.h>
+	// this declaration will fail when there already exists a non const char** version which returns size_t
+	double iconv(iconv_t cd,  char **inbuf, size_t *inbytesleft, char **outbuf, size_t *outbytesleft);
+	int main() { return 0; }
+	

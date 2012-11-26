@@ -1,0 +1,3 @@
+/home/lukas/supertux/supertux-0.3.3/build/external/squirrel/CMakeFiles/squirrel.dir
+/home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/supertux2.dir
+/home/lukas/supertux/supertux-0.3.3/build/CMakeFiles/svnversion.dir
